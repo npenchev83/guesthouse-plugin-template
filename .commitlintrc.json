@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/commitlintrc.json",
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "type-enum": [
+      2,
+      "always",
+      ["feat", "fix", "perf", "refactor", "docs", "chore", "ci", "test", "build", "style", "revert"]
+    ],
+    "type-case": [2, "always", "lower-case"],
+    "type-empty": [2, "never"],
+    "subject-empty": [2, "never"],
+    "header-max-length": [2, "always", 100]
+  },
+  "helpUrl": "https://github.com/npenchev83/guesthouse-deploy/blob/main/DEPLOYMENT.md#-commit-message-convention"
+}

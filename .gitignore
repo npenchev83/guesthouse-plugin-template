@@ -1,0 +1,36 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Build output
+/dist/
+/build/
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+debug.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Package locks (optional - uncomment if not using)
+# package-lock.json
+# composer.lock
+
+# WordPress
+wp-config.php
+
+# Testing
+/coverage/
+.phpunit.result.cache

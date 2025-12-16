@@ -1,0 +1,50 @@
+# Commit Message Linting
+# Validates commit messages follow conventional commits format
+
+name: Commit Lint
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main, master]
+
+jobs:
+  commitlint:
+    name: Validate Commit Messages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install commitlint
+        run: npm install --save-dev @commitlint/cli @commitlint/config-conventional
+
+      - name: Validate commits (PR)
+        if: github.event_name == 'pull_request'
+        run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+      - name: Validate last commit (Push)
+        if: github.event_name == 'push'
+        run: npx commitlint --from ${{ github.sha }}~1 --to ${{ github.sha }} --verbose
+
+      - name: Show help on failure
+        if: failure()
+        run: |
+          echo "❌ Commit message validation failed!"
+          echo ""
+          echo "Format: type(scope): description"
+          echo "Types: feat, fix, perf, refactor, docs, chore, ci, test, build, style, revert"
+          echo ""
+          echo "Examples:"
+          echo "  feat: Add new feature"
+          echo "  fix: Correct a bug"
+          echo ""
+          echo "Guide: https://github.com/npenchev83/guesthouse-deploy/blob/main/DEPLOYMENT.md"

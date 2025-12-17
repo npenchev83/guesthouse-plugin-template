@@ -18,9 +18,21 @@ This is a template repository for creating new Guesthouse WordPress plugins.
 |------|---------|
 | `.commitlintrc.json` | Conventional commits configuration |
 | `.github/workflows/commitlint.yml` | GitHub Action to validate commit messages |
+| `.husky/commit-msg` | Local git hook to enforce commits before push |
+| `package.json` | NPM dependencies for husky + commitlint |
 | `composer.json` | Composer package configuration (boilerplate) |
 | `.github/copilot-instructions.md` | Copilot instructions template |
 | `.gitignore` | Standard gitignore for WordPress plugins |
+
+## 🔧 Setup After Cloning
+
+After cloning a repo created from this template, run:
+
+```bash
+npm install
+```
+
+This will automatically set up the git hooks via husky's `prepare` script.
 
 ## 📝 Commit Message Convention
 

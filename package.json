@@ -1,0 +1,26 @@
+{
+  "name": "guesthouse-plugin-template",
+  "version": "1.0.0",
+  "description": "This is a template repository for creating new Guesthouse WordPress plugins.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npenchev83/guesthouse-plugin-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npenchev83/guesthouse-plugin-template/issues"
+  },
+  "homepage": "https://github.com/npenchev83/guesthouse-plugin-template#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "husky": "^9.1.7"
+  }
+}

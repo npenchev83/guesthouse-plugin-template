@@ -10,7 +10,9 @@
     "type-case": [2, "always", "lower-case"],
     "type-empty": [2, "never"],
     "subject-empty": [2, "never"],
-    "header-max-length": [2, "always", 100]
+    "header-max-length": [2, "always", 200],
+    "subject-case": [0],
+    "body-max-line-length": [0]
   },
   "helpUrl": "https://github.com/npenchev83/guesthouse-deploy/blob/main/DEPLOYMENT.md#-commit-message-convention"
 }
